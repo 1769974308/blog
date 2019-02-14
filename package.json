@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "vuepress blog",
+  "repository": "git@github.com:1769974308/blog.git",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "homepage": "https://github.com/1769974308/blog",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "deploy:build": "npm run build && gh-pages -d docs/.vuepress/dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
