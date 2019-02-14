@@ -34,6 +34,12 @@ const sidebar = {
 			children : [
 				'mysql/mysql-base'
 			]
+		},
+		{
+			title : 'redis',
+			children : [
+				'redis/redis-install'
+			]
 		}
 
 		
@@ -59,7 +65,8 @@ const nav = [
 		text : '数据库',
 		items : [
 			{text : 'sql',link : '/database/sql/sql-base'},
-			{text : 'mysql',link : '/database/mysql/mysql-base'}
+			{text : 'mysql',link : '/database/mysql/mysql-base'},
+			{text : 'redis',link : '/database/redis/redis-install'},
 		]
 	}
 
