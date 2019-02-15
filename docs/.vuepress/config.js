@@ -38,7 +38,8 @@ const sidebar = {
 		{
 			title : 'redis',
 			children : [
-				'redis/redis-install'
+				'redis/redis-install',
+				'redis/redis-setpassword',
 			]
 		}
 
