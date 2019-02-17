@@ -1,6 +1,6 @@
 const sidebar = {
 	'/service/':[
-		{ 
+		{
 			title : 'java基础',
 			children : [
 				'java/base/base'
@@ -13,12 +13,20 @@ const sidebar = {
 			]
 		},
 		{
-			title : 'linu基础',
+			title : 'linux基础',
 			children : [
 				'linux/base/base',
-				'linux/shell/shell'
+				'linux/base/Centos7安装和配置Mysql5.7',
+				'linux/base/crontab',
+				'linux/base/vim',
+				'linux/nature/linux性能优化实战之平均负载',
+				'linux/nature/Linux性能监控工具sysstat介绍与安装',
+				'linux/shell/sed工具',
+				'linux/shell/shell变量',
+				'linux/shell/shell脚本'
+				'linux/shell/正则表达式之grep'
 			]
-		}	
+		}
 
 	],
 	'/database/':[
@@ -27,7 +35,7 @@ const sidebar = {
 			children : [
 				'sql/sql-base'
 			]
-			
+
 		},
 		{
 			title : 'mysql',
@@ -43,10 +51,10 @@ const sidebar = {
 			]
 		}
 
-		
+
 	]
 
-	
+
 
 
 }
@@ -60,7 +68,7 @@ const nav = [
 			{text : 'java',link : '/service/java/base/base'},
 		        {text : 'linux',link : '/service/linux/base/base'}
 
-		]	
+		]
 	},
 	{
 		text : '数据库',
