@@ -19,8 +19,10 @@ const sidebar = {
 				'linux/base/Centos7安装和配置Mysql5.7',
 				'linux/base/crontab',
 				'linux/base/vim',
+
 				'linux/nature/linux性能优化实战之平均负载',
 				'linux/nature/Linux性能监控工具sysstat介绍与安装',
+				
 				'linux/shell/sed工具',
 				'linux/shell/shell变量',
 				'linux/shell/shell脚本',

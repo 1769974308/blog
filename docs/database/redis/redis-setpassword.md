@@ -21,7 +21,7 @@
 [root@izwz9278r1bks1a5wiot7kz redis]# redis-cli
 127.0.0.1:6379> set key 1234
 (error) NOAUTH Authentication required.
-127.0.0.1:6379> auth !1qaz@2wsx
+127.0.0.1:6379> auth 123456
 OK
 127.0.0.1:6379> set key 123456
 OK
