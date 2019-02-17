@@ -23,7 +23,7 @@ const sidebar = {
 				'linux/nature/Linux性能监控工具sysstat介绍与安装',
 				'linux/shell/sed工具',
 				'linux/shell/shell变量',
-				'linux/shell/shell脚本'
+				'linux/shell/shell脚本',
 				'linux/shell/grep正则表达式'
 			]
 		}
