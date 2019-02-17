@@ -24,7 +24,7 @@ const sidebar = {
 				'linux/shell/sed工具',
 				'linux/shell/shell变量',
 				'linux/shell/shell脚本'
-				'linux/shell/正则表达式之grep'
+				'linux/shell/grep正则表达式'
 			]
 		}
 
