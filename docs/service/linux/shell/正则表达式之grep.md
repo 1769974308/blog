@@ -1,3 +1,4 @@
+# 正则表达式之grep
 ### grep高级参数
 [TOC]
 
@@ -10,7 +11,7 @@ grep [-A] [-B] [--color=auto] '搜索字符串' filename
 #### 一、查找特定字符串
 ````
 1、查找字符串
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n -A4 -B5 --color=auto 'log' yum.conf 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n -A4 -B5 --color=auto 'log' yum.conf
 1-[main]
 2-cachedir=/var/cache/yum/$basearch/$releasever
 3-keepcache=0
@@ -20,7 +21,7 @@ grep [-A] [-B] [--color=auto] '搜索字符串' filename
 7-obsoletes=1
 8-gpgcheck=1
 9-plugins=1
-[root@izwz9hpp9gmzo5x5e06iqjz home]# 
+[root@izwz9hpp9gmzo5x5e06iqjz home]#
 2、反向选择（除了特殊字符以外的列）
 grep -vn '搜索字符串' filename
 3、忽略大小写
@@ -39,15 +40,15 @@ grep -in '搜索字符串' filename
 #### 三、行首与行尾字符^$
 
 ````
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '^the' regular_express.txt 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '^the' regular_express.txt
 12:the symbol '*' is represented as start.
 
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '^[^a-zA-Z]' regular_express.txt 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '^[^a-zA-Z]' regular_express.txt
 1:"Open Source" is a good mechanism to develop programs.
 21:# I am VBird
 注：^在[]内表示反向选择，在[]外表示行首
 
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '\.$' regular_express.txt 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n '\.$' regular_express.txt
 1:"Open Source" is a good mechanism to develop programs.
 2:apple is my favorite food.
 3:Football game is not use feet only.
@@ -63,7 +64,7 @@ grep -in '搜索字符串' filename
 ####  四、任意一个字符（.）与重复字符（*）
 
 ````
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n 'g..d' regular_express.txt 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n 'g..d' regular_express.txt
 1:"Open Source" is a good mechanism to develop programs.
 9:Oh! The soup taste good.
 16:The world <Happy> is the same with "glad".
@@ -83,7 +84,7 @@ grep -in '搜索字符串' filename
 #### 五、限定连续RE字符范围｛｝
 
 ````
-[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n 'o\{2\}' regular_express.txt 
+[root@izwz9hpp9gmzo5x5e06iqjz home]# grep -n 'o\{2\}' regular_express.txt
 1:"Open Source" is a good mechanism to develop programs.
 2:apple is my favorite food.
 3:Football game is not use feet only.

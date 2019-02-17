@@ -1,4 +1,4 @@
-## centos 安装crontab及使用
+# centos 安装crontab及使用
 [TOC]
 ### 一、安装
 ```
@@ -15,14 +15,14 @@
 3.关闭服务：service crond stop
 4.重启服务：service crond restart
 5.重新载入配置：service crond reload
-6.加入开机自动启动：chkconfig --level 35 crond on 
+6.加入开机自动启动：chkconfig --level 35 crond on
 
 ### 三、全局配置文件
 crontab在/etc目录下面存在cron.hourly、corn.daily、cron.weekly、corn.monthly、cron.d五个目录及crontab、cron.deny二个文件
 >说明
 >cron.daily  每天执行一次的job
 >cron.weekly  每个星期执行一次的job
->cron.monthly 每月执行一次的job 
+>cron.monthly 每月执行一次的job
 >cron.hourly 每个小时执行一次的job
 >cron.d 系统自动定期需要做的任务
 >crontab 设置定时任务执行文件
@@ -56,13 +56,3 @@ crontab在/etc目录下面存在cron.hourly、corn.daily、cron.weekly、corn.mo
 2.逗号（,）:可以隔开的值指定一个列表范围
 3.中杠（-）：可以用整数之间的中杠表示一个整数范围
 4.正斜线（/）:可以用正斜线指定时间的时隔频率
-
-
-
-
-
-
-
-
-
-

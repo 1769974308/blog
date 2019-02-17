@@ -1,10 +1,11 @@
+# linux性能优化实战之平均负载
 ###  基础篇----平均负载
 
 当发现系统变慢时，通常做的第一件事，就是执行top或者uptime命令，了解系统的负载情况。
 
 ````
 [root@newbie ~]# uptime
- 06:02:05 up 18 min,  1 user,  load average: 0.00, 0.00, 0.00 
+ 06:02:05 up 18 min,  1 user,  load average: 0.00, 0.00, 0.00
  # 当前时间 系统运行时间 正在登录用户数          1分钟  5分钟  15分钟平均负载
 [root@newbie ~]#
 ````
@@ -97,7 +98,7 @@ sysstat: linux性能工具，用来监控和分析系统的性能，会用这包
 
 
 ````
-# 阿里云centos7网络安装stress 
+# 阿里云centos7网络安装stress
 [root@izwz9hpp9gmzo5x5e06iqjz ~]# yum install -y epel-release
 [root@izwz9hpp9gmzo5x5e06iqjz ~]# yum install -y stress
 ````
@@ -111,7 +112,7 @@ sysstat: linux性能工具，用来监控和分析系统的性能，会用这包
 
 每个场景需要开三个终端，登录到同一台linux机器中
 
-####  场景一：CPU密集性进程 
+####  场景一：CPU密集性进程
 
 第一个终端运行stree命令，模拟一个CPU使用率100%的场景：
 
@@ -225,7 +226,7 @@ stress: info: [15267] dispatching hogs: 8 cpu, 0 io, 0 vm, 0 hdd
 ````
 [root@izwz9hpp9gmzo5x5e06iqjz ~]# uptime
  13:06:46 up 15 days, 16:21,  4 users,  load average: 7.75, 3.24, 1.25
-[root@izwz9hpp9gmzo5x5e06iqjz ~]# 
+[root@izwz9hpp9gmzo5x5e06iqjz ~]#
 ````
 
 接着运行pidstat查看进程情况
@@ -249,12 +250,3 @@ Linux 3.10.0-693.2.2.el7.x86_64 (izwz9hpp9gmzo5x5e06iqjz) 	11/25/18 	_x86_64_	(1
 ````
 
 8 个进程在争抢1个CPU，每个进程等待CPU的时间（%wait列）高达75%，超出CPU计算能力的进程，最终导致CPU过载。
-
-
-
-
-
-
-
-
-

@@ -96,8 +96,3 @@ init_connect='SET NAMES utf8'
 查看下编码：
 
 mysql> show variables like '%character%';
-
-
-
-
-

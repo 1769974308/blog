@@ -1,5 +1,5 @@
 [TOC]
-###                                               shell变量
+# shell变量
 #### 一、什么是变量
 变量就是用一个简单的“字眼”来代替另一个比较复杂或者是容易变动的数据
 
@@ -14,7 +14,7 @@
 [root@izwz9278r1bks1a5wiot7kz /]# var1="lang is $LANG"
 [root@izwz9278r1bks1a5wiot7kz /]# echo $var1
 lang is en_US.UTF-8
-[root@izwz9278r1bks1a5wiot7kz /]# 
+[root@izwz9278r1bks1a5wiot7kz /]#
 ````
 
 6、单引号内的特殊符号则为一般字符输出
@@ -23,7 +23,7 @@ lang is en_US.UTF-8
 [root@izwz9278r1bks1a5wiot7kz /]# var2='lang is $LANG'
 [root@izwz9278r1bks1a5wiot7kz /]# echo $var2
 lang is $LANG
-[root@izwz9278r1bks1a5wiot7kz /]# 
+[root@izwz9278r1bks1a5wiot7kz /]#
 ````
 
 7、可以使用转义字符（\）将特殊字符变成一般字符
@@ -37,7 +37,7 @@ lang is $LANG
 [root@izwz9278r1bks1a5wiot7kz kernel]# cd /lib/modules/$(uname -r)/kernel
 [root@izwz9278r1bks1a5wiot7kz kernel]# pwd
 /lib/modules/3.10.0-693.2.2.el7.x86_64/kernel
-[root@izwz9278r1bks1a5wiot7kz kernel]# 
+[root@izwz9278r1bks1a5wiot7kz kernel]#
 ````
 
 9、为变量增加内容，则可用$变量或者\${变量}累加
@@ -78,7 +78,7 @@ SSH_CONNECTION=58.250.253.230 49289 172.18.88.57 22
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 XDG_RUNTIME_DIR=/run/user/0
 _=/usr/bin/env
-[root@izwz9278r1bks1a5wiot7kz kernel]# 
+[root@izwz9278r1bks1a5wiot7kz kernel]#
 
 `````
 
@@ -135,13 +135,13 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias vi='vim'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-[root@izwz9278r1bks1a5wiot7kz shell]# 
+[root@izwz9278r1bks1a5wiot7kz shell]#
 ````
 
 2、设置别名永久生效
 
 ````
-[root@izwz9278r1bks1a5wiot7kz shell]# cat /root/.bashrc 
+[root@izwz9278r1bks1a5wiot7kz shell]# cat /root/.bashrc
 # .bashrc
 
 # User specific aliases and functions
@@ -172,16 +172,16 @@ n:数字 列出最后n条命令行
 !number：执行第几条命令
 !command:搜索命令串开头为command并执行
 !!：执行上一个命令
-[root@izwz9278r1bks1a5wiot7kz local]# history 
+[root@izwz9278r1bks1a5wiot7kz local]# history
     1  history  10
     2  cd ~
     3  ll
     4  ll -a
-    5  cat .bash_logout 
+    5  cat .bash_logout
     6  cd /usr/local/
     7  cd /home/study/
     8  cd -
-    9  history 
+    9  history
 [root@izwz9278r1bks1a5wiot7kz local]# !4
 ll -a
 total 52
@@ -198,14 +198,14 @@ drwxr-xr-x.  2 root root 4096 Nov  5  2016 bin
 [root@izwz9278r1bks1a5wiot7kz local]# type -a ls
 ls is aliased to `ls --color=auto'
 ls is /usr/bin/ls
-[root@izwz9278r1bks1a5wiot7kz local]# 
+[root@izwz9278r1bks1a5wiot7kz local]#
 `````
 
 #### 七、bash的登录与欢迎  
 
 修改/etc/issue    , /etc/motd
 
-####  八、bash的环境配置文件 
+####  八、bash的环境配置文件
 
 系统的整体环境设置 /etc/profile  注:最好不要修改此文件，你会后悔的
 
@@ -305,4 +305,3 @@ split [-bl]   file PREFIX
 -b  后面可接切割成的文件大小，单位 b,k,m
 
 -l   以行数切割
-
