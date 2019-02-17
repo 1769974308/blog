@@ -250,3 +250,5 @@ Linux 3.10.0-693.2.2.el7.x86_64 (izwz9hpp9gmzo5x5e06iqjz) 	11/25/18 	_x86_64_	(1
 ````
 
 8 个进程在争抢1个CPU，每个进程等待CPU的时间（%wait列）高达75%，超出CPU计算能力的进程，最终导致CPU过载。
+
+<Valine></Valine>

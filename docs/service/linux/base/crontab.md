@@ -56,3 +56,5 @@ crontab在/etc目录下面存在cron.hourly、corn.daily、cron.weekly、corn.mo
 2.逗号（,）:可以隔开的值指定一个列表范围
 3.中杠（-）：可以用整数之间的中杠表示一个整数范围
 4.正斜线（/）:可以用正斜线指定时间的时隔频率
+
+<Valine></Valine>
