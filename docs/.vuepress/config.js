@@ -18,11 +18,20 @@ const sidebar = {
 				'linux/base/base',
 				'linux/base/Centos7安装和配置Mysql5.7',
 				'linux/base/crontab',
-				'linux/base/vim',
-
+				'linux/base/vim'
+			]
+		},
+		{
+			title: 'linux性能优化',
+			children :[
 				'linux/nature/linux性能优化实战之平均负载',
-				'linux/nature/Linux性能监控工具sysstat介绍与安装',
-				
+				'linux/nature/Linux性能监控工具sysstat介绍与安装'
+			]
+
+		},
+		{
+			title: 'shell脚本',
+			children:[
 				'linux/shell/sed工具',
 				'linux/shell/shell变量',
 				'linux/shell/shell脚本',
@@ -35,7 +44,9 @@ const sidebar = {
 		{
 			title : 'sql',
 			children : [
-				'sql/sql-base'
+				'sql/sql-base',
+				'sql/sql执行顺序',
+				'sql/explain'
 			]
 
 		},
