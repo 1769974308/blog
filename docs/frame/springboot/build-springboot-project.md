@@ -1,6 +1,11 @@
 # 搭建spring-boot项目
+> [spring-boot-study github源码](https://github.com/1769974308/spring-boot-study)
+
+>[spring-boot 博客](https://1769974308.github.io/blog/frame/springboot/build-springboot-project.html)
 ## 一、环境
-jdk1.8、maven、intellij idea
+- jdk1.8
+- maven
+- intellij idea
 
 ## 二、创建项目
 ### 1、file->new->project

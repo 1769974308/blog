@@ -63,9 +63,17 @@ const sidebar = {
 				'redis/redis-setpassword',
 			]
 		}
-
+	],
+	'/frame/':[
+		{
+			title : 'spring-boot',
+			children :[
+				'springboot/build-springboot-project'
+			]
+		}
 
 	]
+
 
 
 
@@ -89,6 +97,12 @@ const nav = [
 			{text : 'sql',link : '/database/sql/sql-base'},
 			{text : 'mysql',link : '/database/mysql/mysql-base'},
 			{text : 'redis',link : '/database/redis/redis-install'},
+		]
+	},
+	{
+		text : '框架',
+		items : [
+			{text : 'spring-boot',link : '/frame/springboot/build-springboot-project'}
 		]
 	}
 
