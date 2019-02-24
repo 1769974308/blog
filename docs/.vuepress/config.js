@@ -68,7 +68,7 @@ const sidebar = {
 		{
 			title : 'spring-boot',
 			children :[
-				'springboot/build-springboot-project'
+				'springboot/build-springboot-project',
 			]
 		}
 
