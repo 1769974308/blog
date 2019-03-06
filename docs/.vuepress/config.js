@@ -82,7 +82,7 @@ const sidebar = {
 		{
 			title : 'HttpClient',
 			children :[
-				'httpclient/httpclient-introduce',
+
 				'httpclient/httpclient-upload',
 			]
 		},
@@ -144,7 +144,7 @@ const nav = [
 		items : [
 			{text : 'spring-boot',link : '/frame/springboot/build-springboot-project'},
 			{text : 'git',        link : '/frame/git/git-command'},
-			{text : 'httpclient', link : '/frame/httpclient/httpclient-introduce'},
+			{text : 'httpclient', link : '/frame/httpclient/httpclient-upload'},
 			{text : 'Json',       link : '/frame/json/json-course'},
 			{text : 'mybatis',    link : '/frame/mybatis/mybatis-mapper-example'},
 			{text : 'nginx',      link : '/frame/nginx/nginx-install'},
