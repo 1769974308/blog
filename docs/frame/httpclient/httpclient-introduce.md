@@ -42,8 +42,9 @@ HttpGet httpget = new HttpGet(uri);
 System.out.println(httpget.getURI());</span>
 ```
 输出：
-
+```
 http://www.google.com/search?q=httpclient&btnG=Google+Search&aq=f&oq=
+```
 HTTP 响应（Response）
 
 HTTP 相应是服务器接收并解析请求信息后返回给客户端的信息，它的起始行包含了一个协议版本，一个状态码和描述状态的短语
@@ -56,12 +57,12 @@ System.out.println(response.getStatusLine().getReasonPhrase());
 System.out.println(response.getStatusLine().toString());
 ```
 输出：
-
+```
 HTTP/1.1
 200
 OK
 HTTP/1.1 200 OK
-​
+​```
 
 处理报文首部（Headers）
 
@@ -78,9 +79,10 @@ Header[] hs = response.getHeaders("Set-Cookie");
 System.out.println(hs.length);
 ```
 输出：
-
+```
 Set-Cookie: c1=a; path=/; domain=localhost
 Set-Cookie: c2=b; path="/", c3=c; domain="localhost"
+```
 2
 ​
 
@@ -95,9 +97,10 @@ while (it.hasNext()) {
 }
 ```
 输出：
-
+```
 Set-Cookie: c1=a; path=/; domain=localhost
 Set-Cookie: c2=b; path="/", c3=c; domain="localhost"
+```
 HTTP实体（HTTP Entity）
 
 HTTP报文能够携带与请求或相应相关联的内容实体。实体存在于某些请求、响应中，它门是可选的。使用实体的请求被称为内含实体请求，HTTP规范定义了两种内含实体请求，POST和PUT。而响应总是内含实体。
