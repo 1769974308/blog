@@ -3,7 +3,7 @@ home: true
 sidebar: auto
 heroImage: /logo.png
 actionText: START->
-actionLink: /service/
+actionLink: /frame/
 features:
 - title: 服务端
   details: 以Java、Linux、Lua、设计模式等为中心

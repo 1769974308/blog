@@ -66,9 +66,49 @@ const sidebar = {
 	],
 	'/frame/':[
 		{
-			title : 'spring-boot',
+			title : 'SpringBoot',
 			children :[
 				'springboot/build-springboot-project',
+				'springboot/SpringBoot-config-explain',
+				'springboot/springboot-thymeleaf',
+			]
+		},
+		{
+			title : 'Git',
+			children :[
+				'git/git-command',
+			]
+		},
+		{
+			title : 'HttpClient',
+			children :[
+				'httpclient/httpclient-introduce',
+				'httpclient/httpclient-upload',
+			]
+		},
+		{
+			title : 'Json',
+			children :[
+				'json/json-course',
+				'json/json-order-output',
+			]
+		},
+		{
+			title : 'Mybatis',
+			children :[
+				'mybatis/mybatis-batch-insert',
+				'mybatis/mybatis-mapper-example',
+				'mybatis/mybatis-object-list',
+			]
+		},
+		{
+			title : 'Nginx',
+			children :[
+				'nginx/nginx-install',
+				'nginx/nginx-function-introduce',
+				'nginx/nginx-config',
+				'nginx/nginx-start-stop-reload',
+				'nginx/nginx-virtual-host',
 			]
 		}
 
@@ -102,7 +142,12 @@ const nav = [
 	{
 		text : '框架',
 		items : [
-			{text : 'spring-boot',link : '/frame/springboot/build-springboot-project'}
+			{text : 'spring-boot',link : '/frame/springboot/build-springboot-project'},
+			{text : 'git',        link : '/frame/git/git-command'},
+			{text : 'httpclient', link : '/frame/httpclient/httpclient-introduce'},
+			{text : 'Json',       link : '/frame/json/json-course'},
+			{text : 'mybatis',    link : '/frame/mybatis/mybatis-mapper-example'},
+			{text : 'nginx',      link : '/frame/nginx/nginx-install'},
 		]
 	}
 
