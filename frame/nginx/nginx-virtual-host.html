@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx下配置虚拟主机 | 笔记--博客</title>
+    <meta name="description" content="自律给我自由--有时候坚持比努力更重要">
+    <link rel="icon" href="/blog/favicon.ico">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.5520e206.css" as="style"><link rel="preload" href="/blog/assets/js/app.158818f4.js" as="script"><link rel="preload" href="/blog/assets/js/24.d48e46d9.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.4faf78b9.js"><link rel="prefetch" href="/blog/assets/js/11.01135ea1.js"><link rel="prefetch" href="/blog/assets/js/12.32b3c605.js"><link rel="prefetch" href="/blog/assets/js/13.ed64490d.js"><link rel="prefetch" href="/blog/assets/js/14.fa9b9b43.js"><link rel="prefetch" href="/blog/assets/js/15.a95fe297.js"><link rel="prefetch" href="/blog/assets/js/16.e5fa5930.js"><link rel="prefetch" href="/blog/assets/js/17.5f1cc2d1.js"><link rel="prefetch" href="/blog/assets/js/18.0876d72d.js"><link rel="prefetch" href="/blog/assets/js/19.befc8b8c.js"><link rel="prefetch" href="/blog/assets/js/2.a600f0fb.js"><link rel="prefetch" href="/blog/assets/js/20.088594ae.js"><link rel="prefetch" href="/blog/assets/js/21.122e67e4.js"><link rel="prefetch" href="/blog/assets/js/22.bfe4c078.js"><link rel="prefetch" href="/blog/assets/js/23.0d926e2b.js"><link rel="prefetch" href="/blog/assets/js/25.cf001b9e.js"><link rel="prefetch" href="/blog/assets/js/26.1b94bd01.js"><link rel="prefetch" href="/blog/assets/js/27.be26b08f.js"><link rel="prefetch" href="/blog/assets/js/28.df3ca428.js"><link rel="prefetch" href="/blog/assets/js/29.7beea9f1.js"><link rel="prefetch" href="/blog/assets/js/3.a5d742f7.js"><link rel="prefetch" href="/blog/assets/js/30.2f4462b9.js"><link rel="prefetch" href="/blog/assets/js/31.0b35d9e3.js"><link rel="prefetch" href="/blog/assets/js/32.92174476.js"><link rel="prefetch" href="/blog/assets/js/33.eb5a1c4c.js"><link rel="prefetch" href="/blog/assets/js/34.1268b724.js"><link rel="prefetch" href="/blog/assets/js/35.a95e675f.js"><link rel="prefetch" href="/blog/assets/js/36.e59ad22c.js"><link rel="prefetch" href="/blog/assets/js/37.12c1c162.js"><link rel="prefetch" href="/blog/assets/js/38.ee97703e.js"><link rel="prefetch" href="/blog/assets/js/39.ba2f8903.js"><link rel="prefetch" href="/blog/assets/js/4.7f44f6a2.js"><link rel="prefetch" href="/blog/assets/js/40.51ae2191.js"><link rel="prefetch" href="/blog/assets/js/41.d152a485.js"><link rel="prefetch" href="/blog/assets/js/42.dfe1f8b8.js"><link rel="prefetch" href="/blog/assets/js/43.052e93c7.js"><link rel="prefetch" href="/blog/assets/js/44.b96fc465.js"><link rel="prefetch" href="/blog/assets/js/5.46339d35.js"><link rel="prefetch" href="/blog/assets/js/6.3376d62f.js"><link rel="prefetch" href="/blog/assets/js/7.2542f938.js"><link rel="prefetch" href="/blog/assets/js/8.df53751b.js"><link rel="prefetch" href="/blog/assets/js/9.c01978be.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.5520e206.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">笔记--博客</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/service/java/base/base.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/blog/service/linux/base/base.html" class="nav-link">linux</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/database/sql/sql-base.html" class="nav-link">sql</a></li><li class="dropdown-item"><!----> <a href="/blog/database/mysql/mysql-base.html" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/blog/database/redis/redis-install.html" class="nav-link">redis</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frame/springboot/build-springboot-project.html" class="nav-link">spring-boot</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/git/git-command.html" class="nav-link">git</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/httpclient/httpclient-upload.html" class="nav-link">httpclient</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/json/json-course.html" class="nav-link">Json</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/mybatis/mybatis-mapper-example.html" class="nav-link">mybatis</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/nginx/nginx-install.html" class="nav-link">nginx</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/service/java/base/base.html" class="nav-link">java</a></li><li class="dropdown-item"><!----> <a href="/blog/service/linux/base/base.html" class="nav-link">linux</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/database/sql/sql-base.html" class="nav-link">sql</a></li><li class="dropdown-item"><!----> <a href="/blog/database/mysql/mysql-base.html" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/blog/database/redis/redis-install.html" class="nav-link">redis</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frame/springboot/build-springboot-project.html" class="nav-link">spring-boot</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/git/git-command.html" class="nav-link">git</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/httpclient/httpclient-upload.html" class="nav-link">httpclient</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/json/json-course.html" class="nav-link">Json</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/mybatis/mybatis-mapper-example.html" class="nav-link">mybatis</a></li><li class="dropdown-item"><!----> <a href="/blog/frame/nginx/nginx-install.html" class="nav-link">nginx</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>SpringBoot</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>HttpClient</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Json</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Mybatis</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/frame/nginx/nginx-install.html" class="sidebar-link">Nginx安装手册</a></li><li><a href="/blog/frame/nginx/nginx-function-introduce.html" class="sidebar-link">nginx功能介绍</a></li><li><a href="/blog/frame/nginx/nginx-config.html" class="sidebar-link">nginx.conf 基本配置模板</a></li><li><a href="/blog/frame/nginx/nginx-start-stop-reload.html" class="sidebar-link">Nginx启动、停止、重启</a></li><li><a href="/blog/frame/nginx/nginx-virtual-host.html" class="active sidebar-link">Nginx下配置虚拟主机</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/frame/nginx/nginx-virtual-host.html#一、基于域名虚拟主机" class="sidebar-link">一、基于域名虚拟主机</a></li><li class="sidebar-sub-header"><a href="/blog/frame/nginx/nginx-virtual-host.html#二、基于端口的虚拟主机" class="sidebar-link">二、基于端口的虚拟主机</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="nginx下配置虚拟主机"><a href="#nginx下配置虚拟主机" aria-hidden="true" class="header-anchor">#</a> Nginx下配置虚拟主机</h1> <p>nginx下，一个server标签就是一个虚拟主机</p> <p>基于域名的虚拟主机，通过域名来区分虚拟主机--应用：外部网站
+基于端口的虚拟主机，通过端口来区分虚拟主机--应用：公司内部网站，外部网站的管理后台
+基于IP的虚拟主机
+注：nginx指定配置文件启动</p> <p>/usr/local/nginx/sbin/nginx  -c  /usr/local/nginx/conf/nginx.conf</p> <h2 id="一、基于域名虚拟主机"><a href="#一、基于域名虚拟主机" aria-hidden="true" class="header-anchor">#</a> 一、基于域名虚拟主机</h2> <p>Linux操作系统允许添加IP别名，IP别名就是在一块物理网卡上绑定多个lP地址。这样就能够在使用单一网卡的同一个服务器上运行多个基于IP的虚拟主机。</p> <p>iii.	需求</p> <p>一台nginx服务器绑定两个ip：192.168.199.134、192.168.199.135</p> <p>访问不同的ip请求不同的html目录，即：</p> <p>访问http://192.168.199.134将访问“html134”目录下的html网页</p> <p>访问http://192.168.199.135将访问“html135”目录下的html网页</p> <p>iv.	准备环境</p> <p>创建192.168.199.134虚拟机，保证本地电脑和虚拟网络通畅。 在192.168.199.134上安装nginx。</p> <p>v.	html目录创建</p> <p>将原来nginx的html目录拷贝两个目录 “html134”和“html135”，</p> <p>为了方便测试需要修改每个目录下的index.html内容使之个性化。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>cd /usr/local/nginx
+
+cp -r html html134
+
+cp -r html html135
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>vii.	配置虚拟主机</p> <p>修改/usr/local/nginx/conf/nginx.conf文件，添加两个虚拟主机，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#user  nobody;
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+    #配置虚拟主机192.168.199.134
+    server {
+	#监听的ip和端口，配置192.168.199.134:80
+        listen       80;
+	#虚拟主机名称这里配置ip地址
+        server_name  192.168.199.1343;
+	#所有的请求都以/开始，所有的请求都可以匹配此location
+        location / {
+	    #使用root指令指定虚拟主机目录即网页存放目录
+	    #比如访问http://ip/test.html将找到/usr/local/html134/test.html
+	    #比如访问http://ip/item/test.html将找到/usr/local/html134/item/test.html
+
+            root   /usr/local/nginx/html134;
+	    #指定欢迎页面，按从左到右顺序查找
+            index  index.html index.htm;
+        }
+
+    }
+    #配置虚拟主机192.168.199.135
+    server {
+        listen       80;
+        server_name  192.168.199.135;
+
+        location / {
+            root   /usr/local/nginx/html135;
+            index  index.html index.htm;
+        }
+
+    }
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><p>viii.	测试</p> <p>启动nginx，观察端口监听状态：</p> <p>#netstat -an|grep 80</p> <p>访问http://192.168.199.134</p> <p>访问http://192.168.199.135</p> <h2 id="二、基于端口的虚拟主机"><a href="#二、基于端口的虚拟主机" aria-hidden="true" class="header-anchor">#</a> 二、基于端口的虚拟主机</h2> <p>ix.	需求</p> <p>nginx对外提供80和8080两个端口监听服务。</p> <p>请求80端口则请求html80目录下的html</p> <p>请求8080端口则请求html8080目录下的html</p> <p>x.	准备环境</p> <p>创建192.168.199.134虚拟机，保证本地电脑和虚拟网络通畅。 在192.168.199.134上安装nginx</p> <p>xi.	html目录创建</p> <p>将原来nginx的html目录拷贝两个目录 “html80”和“html8080”，</p> <p>为了方便测试需要修改每个目录下的index.html内容使之个性化。 参考基于ip或域名的虚拟主机。</p> <p>xii.	配置虚拟主机</p> <p>修改/usr/local/nginx/conf/nginx.conf文件，添加两个虚拟主机，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#user  nobody;
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+    #配置虚拟主机
+    server {
+	#监听的ip和端口，配置80
+        listen       80;
+	#虚拟主机名称这里配置ip地址
+        server_name  192.168.199.134;
+	#所有的请求都以/开始，所有的请求都可以匹配此location
+        location / {
+	    #使用root指令指定虚拟主机目录即网页存放目录
+	    #比如访问http://ip/test.html将找到/usr/local/html80/test.html
+	    #比如访问http://ip/item/test.html将找到/usr/local/html80/item/test.html
+
+            root   /usr/local/nginx/html80;
+	    #指定欢迎页面，按从左到右顺序查找
+            index  index.html index.htm;
+        }
+
+    }
+    #配置虚拟主机
+    server {
+        listen       8080;
+        server_name  192.168.199.134;
+
+        location / {
+            root   /usr/local/nginx/html8080;
+            index  index.html index.htm;
+        }
+
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><p>xiii.	测试</p> <p>访问http://192.168.101.3</p> <p>访问http://192.168.101.3:8080</p> <p>三、基于域名的虚拟主机配置</p> <p>xiv.	需求</p> <p>两个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。</p> <p>两个域名是aaa.test.com和bbb.test.com</p> <p>nginx服务器使用虚拟机192.168.199.134</p> <p>xv.	准备环境</p> <p>创建192.168.199.134虚拟机，保证本地电脑和虚拟网络通畅。 在192.168.199.134上安装nginx。</p> <p>通过host文件指定aaa.test.com和bbb.test.com对应192.168.199.134虚拟机： 修改window的hosts文件：（C:\Windows\System32\drivers\etc） 添加如下</p> <p>192.168.199.134  aaa.test.com
+192.168.199.134  bbb.test.com
+xvi.	html目录创建</p> <p>在192.168.199.134上创建/usr/local/aaa_html，此目录为aaa.test.com域名访问的目录 在192.168.199.134上创建/usr/local/bbb_html，此目录为bbb.test.com域名访问的目录</p> <p>目录中的内容使用nginx自带的html文件，将/usr/local/nginx/html中的内容拷贝分别拷贝到上边两个目录中，</p> <p>将aaa_html目录中的index.html内容改为：“Welcome to aaa nginx!”</p> <p>将bbb_html目录中的index.html内容改为“Welcome to bbb nginx!”</p> <p>xvii.	配置虚拟主机</p> <p>修改/usr/local/nginx/conf/nginx.conf文件，添加两个虚拟主机，如下：</p> <p>#配置虚拟主机aaa.test.com</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>server {
+		#监听的ip和端口，配置本机ip和端口
+        listen 192.168.199.134:80;
+		#虚拟主机名称是aaa.test.com，请求域名aaa.test.com的url将由此server配置解析
+        server_name aaa.test.com;
+		#所有的请求都以/开始，所有的请求都可以匹配此location
+        location / {
+		#使用root指令指定虚拟主机目录即网页存放目录
+		#比如访问http://ip/test.html将找到/usr/local/aaa_html/test.html
+		#比如访问http://ip/item/test.html将找到/usr/local/aaa_html/item/test.html
+                root /usr/local/aaa_html;
+			    #指定欢迎页面，按从左到右顺序查找
+                index index.html index.htm;
+        }
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>#配置虚拟主机bbb.test.com</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>server {
+        listen 192.168.199.134:80;
+        server_name bbb.test.com;
+        location / {
+                root /usr/local/bbb_html;
+                index index.html index.htm;
+        }
+    }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>xviii.	测试</p> <p>访问aaa.test.com、bbb.test.com</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后一次更新: </span> <span class="time">3/6/2019, 10:18:31 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/frame/nginx/nginx-start-stop-reload.html" class="prev">
+          Nginx启动、停止、重启
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.158818f4.js" defer></script><script src="/blog/assets/js/24.d48e46d9.js" defer></script>
+  </body>
+</html>
